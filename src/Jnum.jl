@@ -1,5 +1,7 @@
 module Jnum
 
-# Write your package code here.
+export bisect
+
+include("oneVariableEquations.jl")
 
 end
