@@ -48,11 +48,11 @@ end
 """
 newtons(f::Function, fp::Function, p0::Number, e::Number, n::Integer)
 
-Compute the root of the given function using **Secant method**.
+Compute the root of the given function using **Newton's method**.
 
 Compute the root of the given function using Newton's method.
 Uses the point at which tangent line intersects x-axis to find the next approximate of the root of function 'f', 
-as such it requires initial approximation `x0` and `fprime`, the derivative of function `f`.
+as such it requires initial approximation `p0` and `fp`, the derivative of function `f`.
 Newton's method has very fast convergence provided a sufficiantly accurate initial approximation is chosen.
 
 #ARGUMENTS
@@ -102,7 +102,7 @@ Compute the root of the given function using **Secant method**.
 
 Secant method, is an Extension of Newton's method.
 Insted of using a tangent line, which requres knowledge of the function's derivative, Secant method uses two values of
-the initial approximation `x0` and `x1`, to find secant line and uses the intersection of the secant line and x-axis
+the initial approximation `p0` and `p1`, to find secant line and uses the intersection of the secant line and x-axis
 to find the next approximation.
 
 #ARGUMENTS
