@@ -1,4 +1,15 @@
-function divided_diff(X, Y)
+"""
+    divided_diff(X, Y)
+
+Generate coefficiant of the interpolating polynomial using divided difference method.
+
+Computes interpolating polynomial passing through the points whoose coordinates are provided in `X[]` and `Y[]`
+using Newton's divided difference method.  
+
+# OUTPUT:
+  * `Y` - coefficiants of the interpolating polynomial of the type `Array{Float64}`,
+"""
+unction divided_diff(X, Y)
     n = length(Y)
     F = copy(Y)
     
@@ -14,7 +25,20 @@ function divided_diff(X, Y)
     return Y
 end
 
-function hermite_polynomeial(X, F, Fp)
+"""
+    hermit(X, F, Fp)
+
+Generate coefficiants of the interpolating Hermite polynomials.
+
+The computation of the interpolating polynomial is done using discrete values of the function `f`, as `F`, 
+and their corresponding `x` value, in `X`, as well as the values of the differential at `x` in `Fp[]`, 
+using Hermite interpolation method. 
+Returns coefficiants of the Hermite polynomial. 
+
+# OUTPUT:
+  * `P` - coefficiants of the interpolating polynomial of the type `Array{Float64}`,
+"""
+function hermite_polynomeal(X, F, Fp)
     n = length(X)
     H = zeros(2n+2, 2n+2)
     Z = zeros(2n+2)
@@ -45,8 +69,3 @@ function hermite_polynomeial(X, F, Fp)
 
     return P
 end
-
-x = [1.3, 1.6, 1.9]
-y = [0.6200860, 0.4554022, 0.2818186]
-yp = [-0.5220232, -0.5698959, -0.5811571]
-hermite_polynomeial(x, y, yp)
